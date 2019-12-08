@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">spinner</string>
+    <string name="txtBtn">Показать адрес</string>
 </resources>

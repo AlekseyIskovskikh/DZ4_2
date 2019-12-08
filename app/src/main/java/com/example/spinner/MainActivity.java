@@ -27,17 +27,19 @@ public class MainActivity extends AppCompatActivity {
         mCountriesSpinner = findViewById(R.id.countriesSpinner);
         mCitiesSpinner = findViewById(R.id.citiesSpinner);
         mHouseNumberSpinner = findViewById(R.id.houseNumberSpinner);
-        Show();
+        mShowAddressBtn = findViewById(R.id.showAddress);
         initSpinnerCountries();
         initHousNumbersSpinner();
+        mShowsBtn();
     }
 
     private void initHousNumbersSpinner() {
         Integer[] houseNumbers = new Integer[50];
-        for (int i = 1; i <= 50; i++) {
+        for (int i = 1, length = houseNumbers.length; i <= length; i++) {
             houseNumbers[i - 1] = i;
         }
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, houseNumbers);
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, houseNumbers);
         mHouseNumberSpinner.setAdapter(adapter);
     }
 
@@ -77,9 +79,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void Show(){
-        Button Btnsh = findViewById(R.id.showAddress);
-        Btnsh.setOnClickListener(new View.OnClickListener() {
+    private void mShowsBtn(){
+        mShowAddressBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this
