@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="countries" />
+    <string-array name="r_cities" />
+    <string-array name="u_cities" />
+    <string-array name="b_cities" />
+</resources>

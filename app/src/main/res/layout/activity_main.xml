@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="50dp"
+    tools:context=".MainActivity">
+    <Spinner
+        android:id="@+id/countriesSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Spinner
+        android:id="@+id/citiesSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Spinner
+        android:id="@+id/houseNumberSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/showAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Показать адрес"/>
+</LinearLayout>
+<resources>
+.....
+<string-array name="countries">
+    <item>Россия</item>
+    <item>Украина</item>
+    <item>Белоруссия</item>
+</string-array>
+<string-array name="r_cities">
+    <item>Москва</item>
+    <item>Санкт-Петербург</item>
+    <item>Казань</item>
+</string-array>
+<string-array name="u_cities">
+    <item>Киев</item>
+    <item>Одесса</item>
+    <item>Харьков</item>
+</string-array>
+<string-array name="b_cities">
+    <item>Минск</item>
+    <item>Гомель</item>
+    <item>Торжок</item>
+</string-array>
+</resources>
