@@ -12,10 +12,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Spinner mCountriesSpinner;
-    private Spinner mCitiesSpinner;
-    private Spinner mHouseNumberSpinner;
-    private Button mShowAddressBtn;
+    private Spinner CountriesSpinner;
+    private Spinner CitiesSpinner;
+    private Spinner HouseNumberSpinner;
+    private Button ShowAddressBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +24,13 @@ public class MainActivity extends AppCompatActivity {
         initViews();
     }
     private void initViews() {
-        mCountriesSpinner = findViewById(R.id.countriesSpinner);
-        mCitiesSpinner = findViewById(R.id.citiesSpinner);
-        mHouseNumberSpinner = findViewById(R.id.houseNumberSpinner);
-        mShowAddressBtn = findViewById(R.id.showAddress);
+        CountriesSpinner = findViewById(R.id.countriesSpinner);
+        CitiesSpinner = findViewById(R.id.citiesSpinner);
+        HouseNumberSpinner = findViewById(R.id.houseNumberSpinner);
+        ShowAddressBtn = findViewById(R.id.showAddress);
         initSpinnerCountries();
         initHousNumbersSpinner();
-        mShowsBtn();
+        ShowsBtn();
     }
 
     private void initHousNumbersSpinner() {
@@ -40,15 +40,15 @@ public class MainActivity extends AppCompatActivity {
         }
         ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, houseNumbers);
-        mHouseNumberSpinner.setAdapter(adapter);
+        HouseNumberSpinner.setAdapter(adapter);
     }
 
     private void initSpinnerCountries() {
         ArrayAdapter<CharSequence> adapterCountries = ArrayAdapter.createFromResource(this, R.array.countries, android.R.layout.simple_spinner_item);
         adapterCountries.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mCountriesSpinner.setAdapter(adapterCountries);
+        CountriesSpinner.setAdapter(adapterCountries);
 
-        mCountriesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        CountriesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String[] countries = getResources().getStringArray(R.array.countries);
@@ -75,20 +75,20 @@ public class MainActivity extends AppCompatActivity {
         }
         if (adapter != null) {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            mCitiesSpinner.setAdapter(adapter);
+            CitiesSpinner.setAdapter(adapter);
         }
     }
 
-    private void mShowsBtn(){
-        mShowAddressBtn.setOnClickListener(new View.OnClickListener() {
+    private void ShowsBtn(){
+        ShowAddressBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this
-                        ,mCountriesSpinner.getSelectedItem().toString()
+                        ,CountriesSpinner.getSelectedItem().toString()
                                 + " "
-                                + mCitiesSpinner.getSelectedItem().toString()
+                                + CitiesSpinner.getSelectedItem().toString()
                                 + " "
-                                + mHouseNumberSpinner.getSelectedItem().toString()
+                                + HouseNumberSpinner.getSelectedItem().toString()
                         ,Toast.LENGTH_LONG)
                         .show();
             }
